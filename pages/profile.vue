@@ -20,7 +20,7 @@
 
     <!-- Список заявок -->
     <div class="flex flex-col gap-6" v-if="refBids && role == 'user'">
-        <p class="mainHeading">Мои заявки</p>
+        <p class="mainHeading">Мои заявки:</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <div class="flex flex-col gap-4 rounded-xl border border-white/10 bg-[#252525] shadow-[0px_0px_13px_-7px_white] p-4" v-for="bid in refBids">
                 <div v-if="showConfirmButton === bid.id" class="flex items-center gap-2 text-lg self-end">
