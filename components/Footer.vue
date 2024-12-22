@@ -36,7 +36,7 @@
 
             <!-- Линия -->
             <div class="w-full h-0.5 bg-[#673ab7] rounded-full"></div>
-            <p class="text-center text-base">© 2024 Triada</p>
+            <p class="text-center text-base">© 2025 Triada</p>
         </div>
     </footer>
 </template>
