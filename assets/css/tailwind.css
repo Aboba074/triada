@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    #__nuxt{
+        @apply flex flex-col min-h-screen bg-[#131313] text-[#f9f9f9] text-xl bg-[url(/images/body/bg_black.png)] bg-fixed
+    }
+        
+    :root{
+        /* максимальная ширина контента */
+        @apply [--widthContent:1280px]
+        /* Растояние от границы брузера по бокам */
+        [--widthContentMargin:15px] sm:[--widthContentMargin:20px] xl:[--widthContentMargin:30px]
+    }    
+
+    /* Настройка кастомных контейнеров */
+    /* Применение системы гридов для расположения контента в ячейку main или full или в любую другую ячейку между именованными линиями grid*/
+
+    .grid-container{        
+        grid-template-columns: [full-start] minmax(var(--widthContentMargin), 1fr) [main-start] minmax(0, var(--widthContent)) [main-end] minmax(var(--widthContentMargin), 1fr) [full-end];
+        @apply grid
+    }
+
+    .grid-container>*{        
+        @apply col-[main]
+    }    
+
+    .wrapper{ 
+        @apply mr-auto max-w-[var(--widthContent)]
+    }
+
+    .container{        
+        @apply max-w-[var(--widthContent)]
+    } 
+}
+
+.mainHeading {
+    @apply text-3xl font-Cormorant tracking-widest font-semibold
+}
+
+:root {  
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+.animate-text {
+    animation: background-pan 5s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--pink),
+        var(--purple),
+        var(--violet),
+        var(--pink)
+    );
+    background-size: 200%;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+
+.index-swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #673ab7 !important;
+}
