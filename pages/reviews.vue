@@ -15,7 +15,7 @@
         <FormKit v-model="reviewForm.text" validation="required" messages-class="text-[#E9556D] font-Cormorant" type="textarea" placeholder="Текст отзыва" name="Текст отзыва" outer-class="w-full" input-class="focus:outline-none px-4 py-2 bg-transparent rounded-xl border border-white/15 w-full transition-all duration-500 focus:border-white focus:bg-[#191919]"/>
         <button type="submit" class="px-4 py-2 border border-[#673ab7] bg-[#673ab7] text-white rounded-full w-[160px] text-center transition-all duration-500 hover:text-[#673ab7] hover:bg-transparent mx-auto">Отправить</button>
     </FormKit>
-    <p v-else class="text-gray-400 text-lg">* Войдите в аккаунт чтобы оставить отзыв.</p>
+    <p v-else class="text-gray-400 text-lg">*Отзывы доступны только для пользователей. Войдите в аккаунт пользователя, чтобы продолжить.</p>
 </template>
 
 <script setup>
