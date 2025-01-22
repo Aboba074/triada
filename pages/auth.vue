@@ -12,7 +12,7 @@
             <p class="font-semibold font-Cormorant tracking-widest text-white">или</p>
             <div class="w-1/3 h-px bg-white"></div>  
         </div>
-        <NuxtLink to="/reg" class="mx-auto px-4 py-2 border border-[#673ab7] text-[#673ab7] rounded-full w-[160px] text-center transition-all duration-500 hover:text-white hover:bg-[#673ab7]">Зарегистрироваться</NuxtLink>
+        <NuxtLink to="/reg" class="mx-auto px-4 py-2 border border-[#673ab7] text-[#673ab7] rounded-full w-fit text-center transition-all duration-500 hover:text-white hover:bg-[#673ab7]">Зарегистрироваться</NuxtLink>
     </FormKit>
 </template>
 
