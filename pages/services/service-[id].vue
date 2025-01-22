@@ -47,7 +47,7 @@
             <button @click="startTimer" :disabled="isTimerActive" :class="{'text-white bg-[#673ab7]' : isTimerActive}" class="px-4 py-2 border border-[#673ab7] hover:text-[#673ab7] hover:bg-transparent rounded-full w-fit text-center transition-all duration-500 text-white bg-[#673ab7]">{{ timer > 0 ? `Заявка отправится через ${timer} секунд` : "Отправить заявку" }}</button>
             <button v-if="isTimerActive" @click="cancelTimer" class="px-4 py-2 border border-red-500 text-red-500 rounded-full w-fit text-center transition-all duration-500 hover:text-white hover:bg-red-500">Отмена</button>
         </div>        
-        <p v-else class="text-lg text-gray-400 self-end">*Для оформления заявки войдите в аккаунт</p>
+        <p v-else class="text-lg text-gray-400 self-end">*Заявки доступны только для пользователей. Войдите в аккаунт пользователя, чтобы продолжить.</p>
     </div>
 
 </template>
