@@ -26,9 +26,6 @@
                             <NuxtLink to="https://t.me/" target="_blank" class="transition-all duration-500 hover:text-[#673ab7]">
                                 <Icon class="text-3xl" name="ic:baseline-telegram"/>
                             </NuxtLink>
-                            <NuxtLink to="https://www.instagram.com/" target="_blank" class="transition-all duration-500 hover:text-[#673ab7]">
-                                <Icon class="text-3xl" name="basil:instagram-outline"/>
-                            </NuxtLink>
                         </div>
                     </div>
                 </div>
