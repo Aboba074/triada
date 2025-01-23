@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+runtimeConfig: {
+  public: {
+    secretKey: process.env.SECRET_KEY, // Передаём ключ на клиент
+  },
+},
 
   modules: [
     '@nuxtjs/tailwindcss',
