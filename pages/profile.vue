@@ -77,22 +77,30 @@
         phone: users[0].phone,
         password: users[0].password
     }) 
+/* шифровка и дешифровка пароля */
+const { encrypt, decrypt } = useCryptStore()
+user.value.password = await decrypt(user.value.password)
 
 
-    /* обновление данных */
-    const updateUser = async () => {    
-        const { data, error } = await supabase
-        .from('users')
-        .update(user.value)
-        .eq('id', id.value)
-           
-        if(error) {
-            console.log(error)
-            showMessage("Произошла ошибка!", false)   
-        } else {            
-            showMessage("Данные обновлены!", true)   
-        }
-    }
+   /* обновление данных */
+const updateUser = async () => {
+  user.value.password = await encrypt(user.value.password)
+
+  const { data, error } = await supabase
+    .from('users')
+    .update(user.value)
+    .eq('id', id.value)
+
+  if(error) {
+    console.log(error)
+    showMessage("Произошла ошибка!", false)
+  } else {
+    showMessage("Данные обновлены!", true)
+  }
+
+  user.value.password = await decrypt(user.value.password)
+}
+
 
 
     /* заявки */
