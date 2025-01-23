@@ -52,31 +52,33 @@
     const router = useRouter()
 
 
-    /* регистрация пользователя */
-    const regUser = async () => {
-        const { data: users, error: usersError } = await supabase
-        .from('users')
-        .select("*")
-        .eq('login', user.value.login)
+   /* регистрация пользователя */
+const { encrypt } = useCryptStore()
+const regUser = async () => {
+  user.value.password = await encrypt(user.value.password)
 
-        if (users[0]) {
-            user.value.login = ""
-            return showMessage("Такой  логин уже используется!", false)
-        } 
-        
+  const { data: users, error: usersError } = await supabase
+    .from('users')
+    .select("*")
+    .eq('login', user.value.login)
 
-        const { data, error } = await supabase
-        .from('users')
-        .insert(user.value)
-        .select()
+  if (users[0]) {
+    user.value.login = ""
+    return showMessage("Такой логин уже используется!", false)
+  }
 
-        if (data) {
-            console.log(data)
-            showMessage('Успешная регистрация!', true)
-            router.push('/auth')
-        } else {
-            console.log(user.value)            
-            showMessage('Произошла ошибка!', false)
-        }
-    }
+  const { data, error } = await supabase
+    .from('users')
+    .insert(user.value)
+    .select()
+
+  if (data) {
+    console.log(data)
+    showMessage('Успешная регистрация!', true)
+    router.push('/auth')
+  } else {
+    console.log(user.value)
+    showMessage('Произошла ошибка!', false)
+  }
+}
 </script>
