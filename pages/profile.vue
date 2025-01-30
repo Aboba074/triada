@@ -109,7 +109,7 @@ const updateUser = async () => {
     /* заявки */
     const { data:bids, error:bidsError } = await supabase
     .from('bids')
-    .select('*, services(*)')   
+    .select('*, services(*), users(*)')
     .eq('userId', id.value)   
     .order('id', { ascending: true })
     
