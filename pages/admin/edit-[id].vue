@@ -1,4 +1,7 @@
 <template>
+    <!-- Вернуться назад -->
+    <NuxtLink to="/admin" class="self-start px-4 py-2 rounded-xl border border-white/10 shadow-[0px_0px_13px_-7px_white] bg-[#191919] w-fit">Вернуться назад</NuxtLink>
+
     <!-- Редактирование услуги -->
     <FormKit @submit="updateService()" type="form" :actions="false" messages-class="hidden" form-class="flex flex-col gap-6 items-center justify-center">
         <p class="mainHeading w-full">Редактирование услуги</p>
@@ -50,7 +53,7 @@
                 </button>
             </div>
             <FormKit :name="`Наименование стадии ${index+1}`" v-model="service.stages[index].title" validation="required" messages-class="text-[#E9556D] font-Cormorant" type="text" placeholder="Наименование стадии" outer-class="w-full" input-class="focus:outline-none px-4 py-2 bg-transparent rounded-xl border border-white/15 w-full transition-all duration-500 focus:border-white focus:bg-[#191919]"/>
-            <FormKit :name="`Описание стадии ${index+1}`" v-model="service.stages[index].desc" validation="required" messages-class="text-[#E9556D] font-Cormorant" type="textarea" placeholder="Описание стадии" outer-class="w-full" input-class="focus:outline-none px-4 py-2 bg-transparent rounded-xl border border-white/15 w-full transition-all duration-500 focus:border-white focus:bg-[#191919]"/>
+            <FormKit :name="`Описание стадии ${index+1}`" v-model="service.stages[index].description" validation="required" messages-class="text-[#E9556D] font-Cormorant" type="textarea" placeholder="Описание стадии" outer-class="w-full" input-class="focus:outline-none px-4 py-2 bg-transparent rounded-xl border border-white/15 w-full transition-all duration-500 focus:border-white focus:bg-[#191919]"/>
         </div>
         <button @click="addStage()" type="button" class="px-4 py-2 border border-[#673ab7] hover:bg-[#673ab7] hover:text-white rounded-full w-fit text-center transition-all duration-500 text-[#673ab7] bg-transparent">Добавить стадию</button>
         <button :disabled="isSubmitting" :class="isSubmitting ? 'opacity-50' : 'hover:text-[#673ab7] hover:bg-transparent'" type="submit" class="px-4 py-2 mt-10 border border-[#673ab7] bg-[#673ab7] text-white rounded-full w-fit text-center transition-all duration-500">
